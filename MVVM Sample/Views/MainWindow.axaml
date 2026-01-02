@@ -3,7 +3,7 @@
         xmlns:vm="using:MVVM_Sample.ViewModels"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-        mc:Ignorable="d" d:DesignWidth="300" d:DesignHeight="75"
+        mc:Ignorable="d" d:DesignWidth="600" d:DesignHeight="200"
         x:CompileBindings="True"
         Width="300"
         Height="300"
@@ -17,12 +17,22 @@
              to set the actual DataContext for runtime, set the DataContext property in code (look at App.axaml.cs) -->
         <vm:MainWindowViewModel/>
     </Design.DataContext>
-
-    <StackPanel Margin="5 0 5 0">
-		<TextBlock>Enter your name</TextBlock>
-        <TextBox Text="{Binding ReactiveVM.Name}"/>
-        <TextBlock Text="{Binding ReactiveVM.Greeting, Mode=OneWay}"
-                   FontWeight="Bold"/>
-    </StackPanel>
-
+    <TabControl>
+        <TabItem Header="Simple View Model">
+            <StackPanel Margin="5 0 5 0">
+		        <TextBlock>Enter your name</TextBlock>
+                <TextBox Text="{Binding SimpleVM.Name}"/>
+                <TextBlock Text="{Binding SimpleVM.Greeting, Mode=OneWay}"
+                           FontWeight="Bold"/>
+            </StackPanel>
+        </TabItem>
+        <TabItem Header="Reactive View Model">
+            <StackPanel Margin="5 0 5 0">
+		        <TextBlock>Enter your name</TextBlock>
+                <TextBox Text="{Binding ReactiveVM.Name}"/>
+                <TextBlock Text="{Binding ReactiveVM.Greeting, Mode=OneWay}"
+                           FontWeight="Bold"/>
+            </StackPanel>
+        </TabItem>
+    </TabControl>
 </Window>
