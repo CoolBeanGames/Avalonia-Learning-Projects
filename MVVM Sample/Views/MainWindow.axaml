@@ -20,8 +20,8 @@
 
     <StackPanel Margin="5 0 5 0">
 		<TextBlock>Enter your name</TextBlock>
-        <TextBox Text="{Binding SimpleVM.Name}"/>
-        <TextBlock Text="{Binding SimpleVM.Greeting, Mode=OneWay}"
+        <TextBox Text="{Binding ReactiveVM.Name}"/>
+        <TextBlock Text="{Binding ReactiveVM.Greeting, Mode=OneWay}"
                    FontWeight="Bold"/>
     </StackPanel>
 

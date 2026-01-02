@@ -4,5 +4,6 @@
     {
         public string Greeting { get; } = "Welcome to Avalonia!";
         public SimpleViewModel SimpleVM { get; } = new SimpleViewModel();
+        public ReactiveViewModel ReactiveVM { get; } = new ReactiveViewModel();
     }
 }
