@@ -1,0 +1,91 @@
+<Window xmlns="https://github.com/avaloniaui"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:vm="using:Temperature_Converter.ViewModels"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        mc:Ignorable="d" d:DesignWidth="400 " d:DesignHeight="205"
+        Background="#AAAAAA"
+        Width="400"
+        Height="205"
+        x:Class="Temperature_Converter.Views.MainWindow"
+        x:DataType="vm:MainWindowViewModel"
+        Icon="/Assets/avalonia-logo.ico"
+        Title="Temperature_Converter">
+
+    <StackPanel>
+        <Border Margin="5" 
+                CornerRadius="10" 
+                Background="LightBlue" 
+                BorderBrush="Black" 
+                BorderThickness="1"
+                BoxShadow="3 3 #000000">
+            <!--header-->
+            <TextBlock
+                Margin="5"
+                FontSize = "24"
+                HorizontalAlignment="Center"
+                Text="Temperature Converter"/>
+        </Border>
+        <Border Background="Gray" 
+                Margin="5" 
+                CornerRadius="10" 
+                Padding="10"
+                BorderBrush="Black" 
+                BorderThickness="1"
+                BoxShadow="3 3 #000000">
+            <!--field area-->
+            <Grid 
+                ShowGridLines="false"
+                ColumnDefinitions="120, 250"
+                RowDefinitions="Auto, Auto">
+                <!--labels-->
+                <TextBlock 
+                    Foreground="White" 
+                    Grid.Row="0" 
+                    Grid.Column="0" 
+                    Margin="5" 
+                    VerticalAlignment="Center"
+                    HorizontalAlignment="Right">
+                        Celcius:
+                </TextBlock>
+                <TextBlock 
+                    Foreground="White" 
+                    Grid.Row="1" 
+                    Grid.Column="0" 
+                    Margin="5" 
+                    VerticalAlignment="Center"
+                    HorizontalAlignment="Right">
+                        Farenheit
+                </TextBlock>
+                <!--input fields-->
+                <TextBox 
+                    Foreground="White"
+                    Grid.Row="0" 
+                    Grid.Column="1" 
+                    Margin="5"
+                    HorizontalContentAlignment="Left"
+                    Name="Celcius"
+                    TextChanged="Celcius_TextChanged"/>
+                <TextBox 
+                    Foreground="White" 
+                    Grid.Row="1"
+                    Grid.Column="1" 
+                    Margin="5" 
+                    HorizontalContentAlignment="Left"
+                    IsReadOnly="True"
+                    Name="Farenheit"/>
+            </Grid>
+        </Border>
+        <!--conversion button-->
+        <Button 
+            HorizontalAlignment="Center" 
+            Background="Gray" 
+            Foreground="White"
+            BorderBrush="Black"
+            CornerRadius="30"
+            BorderThickness="2"
+            Click="Button_OnClick">
+            Convert
+        </Button>  
+    </StackPanel>
+</Window>
